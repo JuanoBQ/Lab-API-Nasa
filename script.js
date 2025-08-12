@@ -105,6 +105,7 @@ function mostrarFavoritos() {
         card.innerHTML = `
             <h4>${fav.title}</h4>
             <img src="${fav.url}" alt="${fav.title}" width="200">
+            <p>${fav.explanation}</p>
             <p>${fav.date}</p>
             <button data-index="${index}" class="eliminar-fav">Eliminar</button>
             <hr>
