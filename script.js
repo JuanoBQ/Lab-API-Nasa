@@ -30,14 +30,18 @@ function mostrarAPOD(data) {
     tituloApod.textContent = data.title;
     fechaApod.textContent = data.date;
     explicacionApod.textContent = data.explanation;
-    const img = document.createElement('img');
-    img.src = data.url;
-    img.alt = data.title;
-    img.classList.add('imagen-apod');
-    medioApod.appendChild(img);
-    
-}
 
+    // Limpiar contenido anterior
+    medioApod.innerHTML = '';
+
+    if (data.media_type === 'image') {
+        const img = document.createElement('img');
+        img.src = data.url;
+        img.alt = data.title;
+        img.classList.add('imagen-apod');
+        medioApod.appendChild(img);
+    } 
+}
 
 // EVENTO ON-CLICK AL BOTON BUSCAR (FECHA)
 buscar.addEventListener('click', () => {

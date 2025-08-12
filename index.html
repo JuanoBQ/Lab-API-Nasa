@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Lab Nasa API</title>
+</head>
+<body>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -10,24 +19,24 @@
 <body>
     <div class="contenedor">
         <header>
-            <h1><i class="fas fa-star"></i> Foto Astronómica del Día - NASA</h1>
+            <h1>Foto Astronómica del Día - NASA</h1>
             <div class="controles">
                 <div class="selector-fecha">
                     <label for="fecha"><i class="fas fa-calendar-alt"></i> Seleccionar fecha:</label>
                     <input type="date" id="fecha" max="">
                     <button id="buscar">Buscar</button>
                 </div>
-    
+                <button id="hoy">Hoy</button>
                 <button id="favorito"><i class="far fa-star"></i> Favorito</button>
             </div>
         </header>
 
         <main>
             <section class="apod-container">
-                <div id="cargando" class="cargando">
+                <!-- <div id="cargando" class="cargando">
                     <div class="spinner"></div>
-                    
-                </div>
+                    <p>Cargando imagen astronómica...</p>
+                </div> -->
                 <div id="contenido-apod" class="contenido-apod oculto">
                     <h2 id="titulo-apod"></h2>
                     <p id="fecha-apod" class="fecha"></p>
