@@ -50,3 +50,34 @@ buscar.addEventListener('click', () => {
         obtenerImagenDeLaNasa(fechaSeleccionada);
     }
 });
+
+// Crear estrellas dinámicas
+function crearEstrellas() {
+  const contenedor = document.getElementById('estrellas');
+  const count = 300;
+  
+  for (let i = 0; i < count; i++) {
+    const estrella = document.createElement('div');
+    estrella.classList.add('estrella');
+    
+    // Tamaño aleatorio entre 1 y 4px
+    const size = Math.random() * 4 + 1;
+    estrella.style.width = `${size}px`;
+    estrella.style.height = `${size}px`;
+    
+    // Posición aleatoria
+    estrella.style.left = `${Math.random() * 100}%`;
+    estrella.style.top = `${Math.random() * 100}%`;
+    
+    // Duración de animación aleatoria
+    const duracion = `${Math.random() * 5 + 3}s`;
+    estrella.style.setProperty('--duracion', duracion);
+    
+    // Retraso de animación aleatorio
+    estrella.style.animationDelay = `${Math.random() * 5}s`;
+    
+    contenedor.appendChild(estrella);
+  }
+}
+
+window.addEventListener('load', crearEstrellas);

@@ -16,6 +16,8 @@ body {
     min-height: 100vh;
 }
 
+
+
 /* Contenedor general */
 .contenedor {
     display: flex;
@@ -214,4 +216,26 @@ button:hover {
     font-weight: bold;
     text-align: center;
     padding: 10px;
+}
+
+#estrellas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.estrella {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: brillar var(--duracion) infinite ease-in-out;
+}
+
+@keyframes brillar {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
