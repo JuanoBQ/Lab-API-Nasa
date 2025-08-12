@@ -1,9 +1,9 @@
 
 // AGREGAR FAVORITOSSSSS
 
-const imagenDelDia = document.getElementById("imagen-del-dia");
-const botonGuardarFav = document.getElementById("agregar-favorito");
-const favoritos = document.getElementById("mostrar-favorito");
+const imagenDelDia = document.getElementsByClassName("imagen-apod");
+const botonGuardarFav = document.getElementById("favorito");
+const favoritos = document.getElementById("lista-favoritos");
 
 let apodActual = null;
 
@@ -22,7 +22,7 @@ async function obtenerAPOD() {
 }
 
 //guardar imagen en favoritos
-function guardarEnFavoritos() {
+export function guardarEnFavoritos() {
     if (!apodActual) return;
 
     let listaFavoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
