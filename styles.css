@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+:root {
+    --nasa-blue: #0b3d91;
+    --nasa-red: #fc3d21;
+    --nasa-white: #ffffff;
+    --nasa-light-gray: #d1d1d1;
+    --nasa-dark-gray: #222222;
+}
+
+body {
+    margin: 0;
+    font-family: 'Bruno Ace', cursive, Arial, sans-serif;
+    background: linear-gradient(135deg, #0b3d91, #000000);
+    color: var(--nasa-white);
+    min-height: 100vh;
+}
+
+/* Contenedor general */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--nasa-white);
+}
+
+/* Controles */
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.selector-fecha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selector-fecha label {
+    font-size: 1rem;
+}
+
+input[type="date"] {
+    background-color: var(--nasa-dark-gray);
+    color: var(--nasa-white);
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+button {
+    background-color: var(--nasa-red);
+    color: var(--nasa-white);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #e22d18;
+}
+
+/* Sección APOD */
+.apod-container {
+    margin-top: 30px;
+}
+
+/* Contenedor principal del contenido APOD */
+#contenido-apod {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(20, 24, 38, 0.6); /* Azul espacial semi-transparente */
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Título del APOD */
+#titulo-apod {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    letter-spacing: 1px;
+    animation: slideInDown 0.8s ease-out;
+}
+
+/* Fecha del APOD */
+#fecha-apod {
+    font-size: 1.1rem;
+    color: #FF6F61; /* Tono cálido para contraste */
+    margin-bottom: 20px;
+    opacity: 0.9;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Imagen del APOD */
+.imagen-apod {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.imagen-apod:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.8);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.medio-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.medio-container img, 
+.medio-container iframe {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+/* Explicación */
+#explicacion-apod {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Favoritos */
+.favoritos {
+    margin-top: 40px;
+}
+
+.favoritos h3 {
+    border-bottom: 2px solid var(--nasa-red);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#lista-favoritos {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-favoritos li {
+    padding: 8px;
+    background-color: rgba(255,255,255,0.05);
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+/* Loader */
+.cargando {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-left-color: var(--nasa-red);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Errores */
+.mensaje-error {
+    color: var(--nasa-red);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
